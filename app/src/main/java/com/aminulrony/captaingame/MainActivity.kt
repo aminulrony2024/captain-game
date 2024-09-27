@@ -17,6 +17,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.aminulrony.captaingame.ui.theme.CaptainGameTheme
+import kotlin.random.Random
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -41,6 +42,8 @@ class MainActivity : ComponentActivity() {
                 Text(text = "Current direction we are going : ${direction.value}")
                 Button(onClick = {
                     direction.value = "East"
+                    if(Random.nextBoolean())
+                        treasureFound.value += 1
                 }) {
                     Text("Sail East")
                 }
