@@ -39,8 +39,10 @@ class MainActivity : ComponentActivity() {
 
                 Text(text = "Tresures found : ${treasureFound.value}")
                 Text(text = "Current direction we are going : ${direction.value}")
-                Button(onClick = {}) {
-                    Text("Enter")
+                Button(onClick = {
+                    direction.value = "East"
+                }) {
+                    Text("Sail East")
                 }
         }
     }
