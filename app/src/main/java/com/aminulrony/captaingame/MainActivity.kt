@@ -5,8 +5,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -24,9 +26,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             CaptainGameTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) {
-                    Aminul(
-
-                    )
+                    Aminul()
                 }
             }
         }
@@ -34,6 +34,15 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun Aminul() {
         val treasureFound = remember { mutableStateOf(0) }
+        val direction = remember { mutableStateOf("North")}
+        Column {
+
+                Text(text = "Tresures found : ${treasureFound.value}")
+                Text(text = "Current direction we are going : ${direction.value}")
+                Button(onClick = {}) {
+                    Text("Enter")
+                }
+        }
     }
     @Preview(showBackground = true)
     @Composable
